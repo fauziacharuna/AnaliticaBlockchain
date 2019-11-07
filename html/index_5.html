@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description" content="QUOTE - Request a quote for every type of companies">
+    <meta name="author" content="Ansonika">
+    <title>ANALITICA - Appraisal Property </title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon_analitica.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+        href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+        href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+    <link href="css/magnific-popup.min.css" rel="stylesheet">
+    <link href="css/skins/square/yellow.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css"> -->
+
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="loader_form">
+        <div data-loader="circle-side-2"></div>
+    </div><!-- /Loader_form -->
+
+    <header>
+        <a id="menu-button-mobile" class="cmn-toggle-switch cmn-toggle-switch__htx"
+            href="javascript:void(0);"><span>Menu mobile</span></a>
+        <nav class="main_nav">
+            <ul class="nav nav-tabs">
+                <li><a href="#tab_1" data-toggle="tab" class="active show">Form</a></li>
+                <li><a href="#tab_2" data-toggle="tab">Data</a></li>
+                <li><a href="#tab_3" data-toggle="tab">Valuasi</a></li>
+            </ul>
+        </nav>
+    </header><!-- /header -->
+
+    <div id="main_container" class="visible">
+
+        <div id="header_in">
+            <div id="logo_in"><img src="img/analitica long.png" width="160" height="30" data-retina="true" alt="Quote">
+            </div>
+        </div>
+
+        <div class="wrapper_in">
+            <div class="container-fluid">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab_1">
+                        <div class="subheader" id="quote"></div>
+                        <div class="row">
+                            <aside class="col-xl-3 col-lg-4">
+                                <h2>Start to Appraise your Collateral to get the best Property Valuation</h2>
+                                <p class="lead">One Stop solution appraisal property</p>
+                                <ul class="list_ok">
+                                    <li> Melengkapi data form identitas properti</li>
+                                    <li> Upload Dokumen dan Foto Pendukung</li>
+                                    <li> Valuasi Properti</li>
+                                </ul>
+                            </aside><!-- /aside -->
+
+                            <div class="col-xl-9 col-lg-8">
+                                <div id="wizard_container">
+                                    <div id="top-wizard">
+                                        <strong>Progress</strong>
+                                        <div id="progressbar"></div>
+                                    </div><!-- /top-wizard -->
+
+                                    <div id="vueform">
+                                        <form name="example-1" id="wrapped">
+                                            <input id="website" name="website" type="text" value="">
+                                            <!-- Leave for security protection, read docs for details -->
+                                            <div id="middle-wizard">
+                                                <div class="step">
+                                                    <h3 class="main_question"><strong>1/3</strong>Melengkapi Identitas
+                                                        Properti
+                                                    </h3>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Nomor Sertifikat Hak Milik</label>
+                                                                <input type="number" name="shm" class="form-control"
+                                                                    v-model="nomorSertifikat" placeholder="Nomor SHM">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Jenis Aset</label>
+                                                                <div class="styled-select">
+
+                                                                    <select class="required" name="Jenis Aset"
+                                                                        v-model="jenisAset">
+                                                                        <option value="" selected>Tipe Aset</option>
+                                                                        <option value="Rumah">Rumah</option>
+                                                                        <option value="Apartemen">Apartemen</option>
+                                                                        <option value="Ruko">Ruko</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group select">
+                                                                <label>Apakah daerah Banjir?</label>
+                                                                <div class="styled-select">
+                                                                    <select class="required" name="daerah Banjir"
+                                                                        v-model="daerahBanjir">
+                                                                        <option value="" selected>Apakah daerah Banjir?
+                                                                        </option>
+                                                                        <option value="banjir">Ya</option>
+                                                                        <option value="tidak banjir">Tidak
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Alamat Aset</label>
+                                                                <input type="text" name="alamatAset"
+                                                                    class="required form-control"
+                                                                    placeholder="Jalan Sendowo, D79 .."
+                                                                    v-model="alamatAset">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Bentuk Tanah</label>
+                                                                <input type="text" name="bentuk_tanah"
+                                                                    class="required form-control"
+                                                                    placeholder="Datar, miring, beraturan ... "
+                                                                    v-model="bentukTanah">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Letak Tanah</label> <input type="text"
+                                                                    name="letak_tanah" class="required form-control"
+                                                                    placeholder="Diantara, disebelah properti ... "
+                                                                    v-model="letakTanah">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Koordinat Lokasi</label>
+                                                                <input type="text" name="langitude"
+                                                                    class="required form-control"
+                                                                    placeholder="langitude" v-model="langitudeV">
+                                                                <input type="text" name="longitude"
+                                                                    class="required form-control"
+                                                                    placeholder="longitude" v-model="longitudeV">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- /step 1-->
+
+                                                <div class="step">
+                                                    <h3 class="main_question"><strong>2/3</strong>Mengisi Detail
+                                                        Properti
+                                                    </h3>
+
+                                                    <div class="row add_bottom_30">
+
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Luas Tanah (m</label>
+                                                                <input type="text" name="luas_tanah"
+                                                                    class="required form-control"
+                                                                    placeholder="Luas Tanah" v-model="luasTanah">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas Bangunan</label>
+                                                                <input type="text" name="luas_bangunan"
+                                                                    class="required form-control"
+                                                                    placeholder="Luas Bangunan" v-model="luasBangunan">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Lebar Jalan</label>
+                                                                <input type="text" name="lebar_jalan"
+                                                                    class="required form-control"
+                                                                    placeholder="Lebar Jalan" v-model="lebarJalan">
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Frontage(m)</label>
+                                                                <input type="text" name="frontage"
+                                                                    class="required form-control"
+                                                                    placeholder="8 meter, 9 meter ..."
+                                                                    v-model="frontage">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>RCN Terdepresiasi(Rp)</label>
+                                                                <input type="text" name="rcn_terdepresiasi"
+                                                                    class="required form-control"
+                                                                    placeholder="Rp. 120.000"
+                                                                    v-model="rcnTerdepresiasi">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Elevasi</label>
+                                                                <input type="text" name="elevasi"
+                                                                    class="required form-control"
+                                                                    placeholder="10 m diatas" v-model="elevasi">
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- /row-->
+                                                    <!-- <div class="form-group textarea_info">
+                                                        <label>Additional info</label>
+                                                        <textarea name="addtional_info" class="form-control"
+                                                            style="height:150px;"
+                                                            placeholder="How many pages, other details, etc..."></textarea>
+                                                    </div> -->
+                                                </div><!-- /step 2-->
+
+
+
+                                                <div class="submit step">
+
+                                                    <h3 class="main_question"><strong>3/3</strong>Melengkapi Dokumen
+                                                    </h3>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <input type="text" name="gambar_aset"
+                                                                    class="required form-control"
+                                                                    placeholder="Gambar Aset" v-model="gambarAsset">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" name="ajb"
+                                                                    class="required form-control"
+                                                                    placeholder="Akta Jual Beli" v-model="AJB">
+                                                            </div>
+                                                        </div><!-- /col-sm-6 -->
+
+
+                                                        <input name="terms" type="checkbox" class="icheck required"
+                                                            value="yes">
+                                                        <label>Please accept <a href="#" data-toggle="modal"
+                                                                data-target="#terms-txt">terms and conditions</a> ?
+                                                        </label>
+                                                    </div>
+
+                                                </div><!-- /step 3-->
+
+                                            </div><!-- /middle-wizard -->
+                                            <div id="bottom-wizard">
+                                                <button type="button" name="backward" class="backward">Backward
+                                                </button>
+                                                <button type="button" name="forward" class="forward">Forward</button>
+                                                <button type="submit" name="process" class="submit"
+                                                    @click="unggah">Submit</button>
+                                            </div><!-- /bottom-wizard -->
+                                        </form>
+                                    </div><!-- /Wizard container -->
+                                </div>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </div><!-- /TAB 1:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+                    <div class="tab-pane fade" id="tab_2">
+                        <div class="subheader" id="about"></div>
+                        <div class="row">
+                            <div id="vuecard">
+                                <div class="col-lg-12">
+                                    <h2>Data Pembanding yang mendekati</h2>
+                                    <p class="lead">adasdasdasdas</p>
+
+                                    <div class="row">
+                                        <div class="col-md-4" v-for="(card, index) in info">
+                                            <div class="box_feat" href="img/demo_img_2.jpg" title="Photo title">
+                                                <img src="img/demo_img_2.jpg" alt="" class="img-fluid">
+                                                <span></span>
+                                                <div class="card">
+                                                    <p>{{card.jenisAset}}<p>
+                                                    <p>{{card.alamatAset}}</p>
+                                                            <!-- <p>{{result.abstract}}</p> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /row -->
+
+                                </div><!-- /row -->
+                            </div><!-- /col -->
+                            <!-- /gallery -->
+                        </div><!-- /row -->
+                    </div><!-- /TAB 2:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+                    <div class="tab-pane fade" id="tab_3">
+
+                        <!-- <div id="map_contact"></div> -->
+                        <!-- /map -->
+
+                        <div class="subheader" id="contact_info"></div>
+                        <div class="row magnific-gallery">
+                            <div class="col-md-3">
+                                <a href="img/demo_img_1.jpg" title="Photo title"><img src="img/demo_img_1.jpg" alt=""
+                                        class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="img/demo_img_2.jpg" title="Photo title"><img src="img/demo_img_2.jpg" alt=""
+                                        class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="img/demo_img_2.jpg" title="Photo title"><img src="img/demo_img_2.jpg" alt=""
+                                        class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="img/demo_img_2.jpg" title="Photo title"><img src="img/demo_img_2.jpg" alt=""
+                                        class="img-fluid">
+                                </a>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Parameter </th>
+                                    <th>Properti Anda</th>
+                                    <th>Properti 1</th>
+                                    <th>Properti 2</th>
+                                    <th>Properti 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lokasi</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Jarak dengan Obyek</td>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Legalitas</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>NOP</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Bentuk Tanah</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Legalitas</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Frontage</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Lebar Jalan</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Letak Tanah</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Elevasi</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Daerah Banjir</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>RCN Terdepresiasi</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Harga Tanah</td>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>Adjustment </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Time</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Time</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Dokumen Tanah</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Luas Tanah</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Lokasi</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Time</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Bentuk Tanah</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Lebar depan dan Lebar Halaman</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Lebar dan Kondisi Jalan</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Kontur Tanah</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Dekat Kuburan</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Adjustment Total</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Adjustment Result</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Weighting</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Indikasi nilai tanah</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Indikasi Nilai Tanah</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>RCN Depresiation</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <td>Valuasi Properti</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@twitter</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div><!-- / row-->
+                    <hr>
+
+                </div>
+            </div><!-- /TAB 3:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+        </div><!-- /tab content -->
+    </div><!-- /container-fluid -->
+    </div><!-- /wrapper_in -->
+    </div><!-- /main_container -->
+
+    <div id="additional_links">
+        <ul>
+            <li>© 2019 Analitica</li>
+            <li><a href="#0" class="animated_link">Purchase this template</a></li>
+            <li><a href="index_2.html" class="animated_link">Demo Slider</a></li>
+            <li><a href="index_3.html" class="animated_link">With UPLOAD</a></li>
+            <li><a href="index_4.html" class="animated_link">With Branch</a></li>
+            <li><a href="index_5.html" class="animated_link">Full Page View</a></li>
+            <li><a href="shortcodes.html" class="animated_link">Shortcodes</a></li>
+        </ul>
+    </div><!-- /add links -->
+
+    <!-- Modal terms -->
+    <div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms and conditions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>,
+                        mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus,
+                        pro ne quod dicunt sensibus.</p>
+                    <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam
+                        dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt
+                        sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum
+                        accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum
+                        sanctus, pro ne quod dicunt sensibus.</p>
+                    <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam
+                        dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt
+                        sensibus.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn_1" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- SCRIPTS -->
+    <!-- Jquery-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Common script -->
+    <script src="js/common_scripts_min.js"></script>
+    <!-- Theme script -->
+    <script src="js/functions_no_side_panel.js"></script>
+    <!-- Google map -->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/mapmarker.jquery.js"></script>
+    <script src="js/mapmarker_func.jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="vue/form.js"></script>
+
+</body>
+
+</html>
