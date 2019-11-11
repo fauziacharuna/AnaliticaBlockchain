@@ -26,7 +26,11 @@ var app = new Vue({
       hubungan: '',
       jenisLegalitas: '',
       nama: '',
-      telepon: ''
+      telepon: '',
+      tahun: '',
+      tahunRenovasi: '',
+      nilaiTanah: ''
+
     },
     methods: {
         unggah: function(e) {
@@ -46,7 +50,14 @@ var app = new Vue({
                 RCNterdepresiasi: this.rcnTerdepresiasi,
                 koordinat: this.koordinat,
                 gambarAset: this.gambarAsset,
-                AJB: this.AJB
+                hubungan: this.hubungan,
+                jenisLegalitas: this.jenisLegalitas,
+                nama: this.nama,
+                telepon: this.telepon,
+                tahun: this.tahun,
+                tahunRenovasi: this.tahunRenovasi,
+                nilaiTanah: this.nilaiTanah
+
               })
               .then(function (response) {
                 console.log(response);
