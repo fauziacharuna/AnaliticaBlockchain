@@ -68,4 +68,17 @@ var cardApp = new Vue({
     this.info = await this.get();
   }
 })
+var tableApp = new Vue({
+  el: '#tableCardVue',
+  info:{
+    card: null
+  },
+  methods: {
+    get: async function(){
+      return axios
+      .get('http://localhost:8089/get')
+      .then(response => response.info);
+    }
+  }
+})
 
