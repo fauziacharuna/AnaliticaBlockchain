@@ -1,13 +1,19 @@
+
+import * as VueGoogleMaps from "vue2-google-maps";
+import Map from './map.vue'
+var map = new Vue ({
+  el:'#maps',
+  render: h => (Map)
+})
 var app = new Vue({
-    el: '#vueform',
+    el: '#transactionform',
     data: {
       nomorSertifikat: '',
       jenisAset: '',
       daerahBanjir: '',
       bentukTanah: '',
       letakTanah: '',
-      langitudeV: '',
-      longitudeV: '',
+      koordinat: ' ',
       luasTanah: '',
       luasBangunan: '',
       lebarJalan: '',
@@ -16,7 +22,11 @@ var app = new Vue({
       elevasi: '',
       alamatAset: '',
       gambarAsset: '',
-      AJB: ''
+      // AJB: '',
+      hubungan: '',
+      jenisLegalitas: '',
+      nama: '',
+      telepon: ''
     },
     methods: {
         unggah: function(e) {
@@ -34,11 +44,7 @@ var app = new Vue({
                 elevasi: this.elevasi,
                 daerahBanjir: this.daerahBanjir,
                 RCNterdepresiasi: this.rcnTerdepresiasi,
-                koordinat: {
-                    long: this.longitudeV,
-                    lat: this.langitudeV
-
-                },
+                koordinat: this.koordinat,
                 gambarAset: this.gambarAsset,
                 AJB: this.AJB
               })
@@ -66,6 +72,7 @@ var cardApp = new Vue({
   },
   async created(){
     this.info = await this.get();
+    console.log(info)
   }
 })
 var tableApp = new Vue({
