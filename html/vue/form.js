@@ -136,17 +136,18 @@ document.addEventListener('DOMContentLoaded', function() {
         lat: 10.0,
         lng: 10.0
       },
+      pembanding: [],
       jenisLegalitas: '',
       nilaiTanah: '',
       adjustment: {
-        "time": 0,
-        "landDocument": 0,
-        "landArea": 0,
-        "location": 0,
-        "soilForm": 0,
-        "frontage": 0,
-        "lebarJalan": 0,
-        "bentukTanah": 0
+        time: 0,
+        landDocument: 0,
+        landArea: 0,
+        location: 0,
+        soilForm: 0,
+        frontage: 0,
+        lebarJalan: 0,
+        bentukTanah: 0
       },
       pembobotan: 0,
       place: null,
@@ -214,12 +215,49 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(error.respon);
               });
         },
-        findPembanding: function(e) {
-          e.preventDefault();
-          axios.get('http://localhost:8089/pembanding?lat='+this.latLng.lat+'&long='+this.latLng.lon)
+        findPembanding: function() {
+          axios.get('http://localhost:8089/get')
           .then(res => {
             console.log(res);
-            window.location = "#tab_3"
+            res.data.map(x => {
+              this.pembanding.push({
+                legalitas: x.legalitas,
+                jenisAset: x.jenisAset,
+                alamatAset: x.alamatAset,
+                luasTanah: x.luasTanah,
+                luasBangunan: x.luasBangunan,
+                bentukTanah: x.bentukTanah,
+                lebarJalan: x.lebarJalan,
+                frontage: x.frontage,
+                letakTanah: x.letakTanah,
+                elevasi: x.elevasi,
+                daerahBanjir: x.daerahBanjir,
+                RCNterdepresiasi: x.RCNterdepresiasi,
+                koordinat: {
+                  lat: x.koordinat.lat,
+                  long: x.koordinat.long
+                },
+                gambarAset: x.gambarAsset,
+                hubungan: x.hubungan,
+                jenisLegalitas: x.jenisLegalitas,
+                nama: x.nama,
+                telepon: x.telepon,
+                tahun: x.tahun,
+                tahunRenovasi: x.tahunRenovasi,
+                nilaiTanah: x.nilaiTanah,
+                adjustment: {
+                  time: 0,
+                  landDocument: 0,
+                  landArea: 0,
+                  location: 0,
+                  soilForm: 0,
+                  frontage: 0,
+                  lebarJalan: 0,
+                  bentukTanah: 0
+                },
+                pembobotan: 0,
+              })
+            })
           })
         }
     },

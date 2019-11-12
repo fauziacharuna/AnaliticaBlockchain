@@ -51,8 +51,8 @@
             <ul class="nav nav-tabs">
                 <li><a href="#tab_1" data-toggle="tab" class="active show">Transaksi</a></li>
                 <li><a href="#tab_4" data-toggle="tab">Appraisal</a></li>
-                <!-- <li><a href="#tab_2" data-toggle="tab">Data</a></li>
-                <li><a href="#tab_3" data-toggle="tab">Valuasi</a></li> -->
+                <!-- <li><a href="#tab_2" data-toggle="tab">Data</a></li-->
+                <li><a href="#tab_3" data-toggle="tab">Valuasi</a></li>
             </ul>
         </nav>
     </header><!-- /header -->
@@ -532,8 +532,8 @@
                                                 <button type="button" name="backward" class="backward">Backward
                                                 </button>
                                                 <button type="button" name="forward" class="forward">Forward</button>
-                                                <button type="submit" name="process" class="submit"
-                                                    @click="findPembanding">Submit</button>
+                                                <a href="#tab_3" @click="findPembanding" data-toggle="tab"><button type="submit" name="process" class="submit"
+                                                    >Cari Pembanding</button></a>
                                             </div><!-- /bottom-wizard -->
                                         </form>
                                     </div><!-- /Wizard container -->
