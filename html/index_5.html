@@ -8,9 +8,7 @@
     <meta name="description" content="QUOTE - Request a quote for every type of companies">
     <meta name="author" content="Ansonika">
     <title>ANALITICA - Appraisal Property </title>
-    <!-- MAPS API GOOGLE  -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChYB1wHFRqRfZUWm-YvCK5OEdjkcJiyxU&libraries=places">
-    </script>
+
 
 
     <!-- Favicons-->
@@ -100,6 +98,14 @@
                                                     </h3>
 
                                                     <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <gmap-autocomplete
+                                                                @place_changed="setPlace">
+                                                            </gmap-autocomplete>
+                                                            <google-map :center="center" :zoom="10" style="width: 100%; height: 500px">
+                                                                <google-marker :position="latLng" :clickable="true" :draggable="true" @click="mark"></google-marker>
+                                                            </google-map>
+                                                        </div>
                                                         <div class="col-sm-6">
                                                             <div class="form-group">
                                                                 <label>Jenis Sertifikat</label>
@@ -291,7 +297,11 @@
                                                                     class="required form-control"
                                                                     placeholder="Gambar Aset" v-model="gambarAsset">
                                                             </div>
-                                                        </div><!-- /col-sm-6 -->
+                                                        </div>
+                                                        <div class="col-sm-6">
+
+                                                        </div>
+                                                        <!-- /col-sm-6 -->
 
 
                                                         <!-- <input name="terms" type="checkbox" class="icheck required"
@@ -954,12 +964,13 @@
     <!-- Theme script -->
     <script src="js/functions_no_side_panel.js"></script>
     <!-- Google map -->
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
+>
     <script src="js/mapmarker.jquery.js"></script>
     <script src="js/mapmarker_func.jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="vue/gmaps.js"></script>
     <script src="vue/form.js"></script>
 
 </body>
